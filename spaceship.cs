@@ -34,7 +34,7 @@ namespace funkyBubbles
 
         public override void draw (Graphics g)
         {
-            g.DrawImage(sship, x, y);
+            g.DrawImage(sship, x-75, y-50,150,100);
         }
 
 

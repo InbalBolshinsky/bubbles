@@ -1,0 +1,10 @@
+C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.csproj.AssemblyReference.cache
+C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.Form1.resources
+C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.Properties.Resources.resources
+C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.csproj.GenerateResource.cache
+C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.csproj.CoreCompileInputs.cache
+C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\funkyBubbles.exe.config
+C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\funkyBubbles.exe
+C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\funkyBubbles.pdb
+C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.exe
+C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.pdb

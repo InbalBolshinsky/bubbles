@@ -15,6 +15,32 @@ namespace funkyBubbles
         public Form1()
         {
             InitializeComponent();
+            player = new Spaceship(Width / 2, Height - (Height / 8), Width / 12);
+            
+        }
+        Rectangle spaceship;
+        Graphics g;
+        Spaceship player;
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+            spaceship = new Rectangle(100, 100, 50, 20);
+            g = this.CreateGraphics();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            player.draw(e.Graphics);
         }
     }
 }

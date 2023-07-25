@@ -16,7 +16,7 @@ namespace funkyBubbles
         {
             InitializeComponent();
             player = new Spaceship(Width / 2, Height - (Height / 8), Width / 12);
-            
+            regolar= new Block;
         }
         Rectangle spaceship;
         Rectangle block;

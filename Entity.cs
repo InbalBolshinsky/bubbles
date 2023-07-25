@@ -23,7 +23,7 @@ namespace funkyBubbles
             this.x = x;
             this.y = y;
             this.radius = size;
-            this.collision = new RectangleF(x - size / 2, y - size / 2, size, size);
+            //this.collision = new RectangleF(x - size / 2, y - size / 2, size, size);
 
         }
 

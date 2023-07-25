@@ -19,8 +19,10 @@ namespace funkyBubbles
             
         }
         Rectangle spaceship;
+        Rectangle block;
         Graphics g;
         Spaceship player;
+        Block regolar;
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {

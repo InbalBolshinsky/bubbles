@@ -23,6 +23,5 @@ namespace funkyBubbles
         {
             g.DrawImage(block, x -200, y +500, 150, 100);
         }
-        //hgfdfd
     }
 }

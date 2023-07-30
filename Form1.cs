@@ -16,15 +16,22 @@ namespace funkyBubbles
         {
             InitializeComponent();
             player = new Spaceship(Width / 2, Height - (Height / 8), Width / 12);
-            regolar= new Block(Width / 2, Height - (Height / 8), Width / 12);
-            ball= new Ball(Width / 2, Height - (Height / 8), Width / 12);
+            // Board= new Block(Width / 2, Height - (Height / 8), Width / 12);
+            for (i = 0; i < 4; i++)
+            {
+                diffx = 400;
+                for (j = 0; j < 8; j++)
+                {
+                }
+            }
+            ball = new Ball(Width / 2, Height - (Height / 8), Width / 12);
 
         }
         Rectangle spaceship;
         Rectangle block;
         Graphics g;
         Spaceship player;
-        Block regolar;
+        Block[,] Board = new Block[8, 4];
         Ball ball;
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
@@ -52,6 +59,11 @@ namespace funkyBubbles
             player.draw(e.Graphics);
             regolar.draw(e.Graphics);
             ball.draw(e.Graphics);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -26,15 +26,11 @@ namespace funkyBubbles
             b = new SolidBrush(Color.Yellow);
 
             sship = Image.FromFile("pics\\sship.png");
-            
-            
-
-            
         }
 
         public override void draw (Graphics g)
         {
-            g.DrawImage(sship, x-75, y-50,150,100);
+            g.DrawImage(sship, x-75, y+110,150,100);
         }
 
 

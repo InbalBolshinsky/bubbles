@@ -8,3 +8,13 @@ C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\f
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\funkyBubbles.pdb
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.exe
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.pdb
+C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.Form1.resources
+C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.Properties.Resources.resources
+C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.csproj.GenerateResource.cache
+C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.csproj.CoreCompileInputs.cache
+C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.exe
+C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.pdb
+C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\funkyBubbles.exe.config
+C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\funkyBubbles.exe
+C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\funkyBubbles.pdb
+C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.csproj.AssemblyReference.cache

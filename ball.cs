@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Security.Policy;
 
 
 namespace funkyBubbles
@@ -11,9 +12,8 @@ namespace funkyBubbles
     class Ball : Entity 
     {
         Image ball;
-        public Ball(float x, float y, int size) : base(x, y, size)
+        public Ball(float x, float y, int sizeX) : base(x, y, sizeX, sizeX)
         {
-            this.radius = size;
             b = new SolidBrush(Color.Red);
 
             ball = Image.FromFile("pics\\ball.png");
@@ -23,8 +23,8 @@ namespace funkyBubbles
 
         public override void draw(Graphics g)
         {
-        g.DrawImage(ball, x-100, y-100, 100, 100);
-
+            //g.DrawImage(ball, x, y, radius, radius);
+            g.FillEllipse(b,x,y,sizeX,sizeY);
         }
 
         

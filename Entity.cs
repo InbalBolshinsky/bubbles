@@ -13,17 +13,20 @@ namespace funkyBubbles
 
         public int Dir = 0;
         public int lastDir = 1;
-        public float radius;
+        public float sizeX,sizeY;
         public RectangleF collision;
 
         public Brush b = new SolidBrush(Color.Yellow);
 
-        public Entity(float x, float y, int size)
+        public Entity(float x, float y, int sizeX,int sizeY)
         {
             this.x = x;
             this.y = y;
-            this.radius = size;
-            //this.collision = new RectangleF(x - size / 2, y - size / 2, size, size);
+
+            this.sizeX = sizeX;
+            this.sizeY = sizeY; 
+
+            this.collision = new RectangleF(x - sizeX / 2, y - sizeY / 2, sizeX, sizeY);
 
         }
 
@@ -51,32 +54,10 @@ namespace funkyBubbles
 
 
 
-        public void UpdateRec(int epsilon)
+        public void UpdateRec()
         {
-            switch (Dir)
-            {
-                case 1:
-                    collision.X = x - radius - epsilon;
-                    collision.Y = y - radius;
-                    break;
-                case 2:
-                    collision.X = x - radius;
-                    collision.Y = y - radius - epsilon;
-                    break;
-                case 3:
-                    collision.X = x - radius + epsilon;
-                    collision.Y = y - radius;
-                    break;
-                case 4:
-                    collision.X = x - radius;
-                    collision.Y = y - radius + epsilon;
-                    break;
-
-                default:
-                    collision.X = x - radius;
-                    collision.Y = y - radius;
-                    break;
-            }
+            collision.X = x;
+            collision.Y = y;
         }
 
         public abstract void draw(Graphics g);

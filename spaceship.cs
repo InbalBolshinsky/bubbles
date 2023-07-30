@@ -20,9 +20,9 @@ namespace funkyBubbles
         public bool isClosed;
         int animInt;
 
-        public Spaceship(float x, float y, int size) : base(x, y, size)
+        public Spaceship(float x, float y, int sizeX, int sizeY) : base(x, y, sizeX, sizeY)
         {
-            this.radius = size;
+         
             b = new SolidBrush(Color.Yellow);
 
             sship = Image.FromFile("pics\\sship.png");
@@ -30,7 +30,7 @@ namespace funkyBubbles
 
         public override void draw (Graphics g)
         {
-            g.DrawImage(sship, x-75, y+110,150,100);
+            g.DrawImage(sship, x, y, sizeX, sizeY);
         }
 
 

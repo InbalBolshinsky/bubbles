@@ -26,7 +26,7 @@ namespace funkyBubbles
             this.sizeX = sizeX;
             this.sizeY = sizeY; 
 
-            this.collision = new RectangleF(x - sizeX / 2, y - sizeY / 2, sizeX, sizeY);
+            this.collision = new RectangleF(x, y, sizeX, sizeY);
 
         }
 
@@ -58,6 +58,10 @@ namespace funkyBubbles
         {
             collision.X = x;
             collision.Y = y;
+
+            collision.Width = sizeX;
+            collision.Height = sizeY;
+
         }
 
         public abstract void draw(Graphics g);

@@ -23,7 +23,7 @@ namespace funkyBubbles
 
         public override void draw(Graphics g)
         {
-            //g.DrawImage(ball, x, y, radius, radius);
+            //g.DrawImage(ball, x, y, sizeX, sizeY);
             g.FillEllipse(b,x,y,sizeX,sizeY);
         }
 

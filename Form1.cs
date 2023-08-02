@@ -82,6 +82,7 @@ namespace funkyBubbles
         }
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
+            //timer1_Tick(sender, e);
         }
 
 

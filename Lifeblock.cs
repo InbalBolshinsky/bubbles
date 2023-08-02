@@ -10,6 +10,8 @@ namespace funkyBubbles
     class Lifeblock : Block
     {
         Image number1;
+        public object block;
+
         public Lifeblock(float x, float y, int sizeX, int sizeY) : base(x, y, sizeX, sizeY)
         {
             this.sizeX = sizeX;
@@ -25,19 +27,25 @@ namespace funkyBubbles
         {
             number1= Image.FromFile("pics\\ball.png");
 
-            sizeX = 3;
-            sizeY = 3;
+            sizeX = 7;
+            sizeY = 7;
             UpdateRec();
+            //while (1)
+            //{
+            //    y += 5;
+            //}
 
-            bool dirX;//direction of each entity on x
-            bool dirY;//direction of each entity on y
-            dirY = true;
-            int Vel;
-            int VelY;
-            Vel = 4; 
-            VelY = 4;
+            ////bool dirX;//direction of each entity on x
+            ////bool dirY;//direction of each entity on y
+            Lifeblock.dirY = true;
+            ////int Vel;
+            ////int VelY;
+            ////Vel = 4; 
+            ////VelY = 4;
 
-          
+
+
+
 
         }
     

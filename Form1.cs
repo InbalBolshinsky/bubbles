@@ -186,10 +186,11 @@ namespace funkyBubbles
 
             }
             for (int i = 0; i < balls.Count; i++)
-            {
+            {                    balls[i].y += 5;//מוריד את האפגרייד
+
                 if (balls[i] != null)
                 {
-                    balls[i].y += 5;//מוריד את האפגרייד
+                    //balls[i].draw();
                     balls[i].UpdateRec();
                     if (balls[i].collision.IntersectsWith(player.collision))
                     {

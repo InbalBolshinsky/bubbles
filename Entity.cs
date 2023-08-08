@@ -30,27 +30,27 @@ namespace funkyBubbles
 
         }
 
-        public void move(float speed)
-       {
-            switch (Dir)
-            {
-                case 1:
-                   x -= speed;
-                    break;
-                case 2:
-                   y -= speed;
-                    break;
-               case 3:
-                    x += speed;
-                   break;
-               case 4:
-                  y += speed;
-                    break;
-            }
+      ////  public void move(float speed)
+      //// {
+      ////      switch (Dir)
+      ////      {
+      ////          case 1:
+      ////             x -= speed;
+      ////              break;
+      ////          case 2:
+      ////             y -= speed;
+      ////              break;
+      ////         case 3:
+      ////              x += speed;
+      ////             break;
+      ////         case 4:
+      ////            y += speed;
+      ////              break;
+      ////      }
 
-            if (Dir != 0)
-               lastDir = Dir;
-      }
+      ////      if (Dir != 0)
+      ////         lastDir = Dir;
+      ////}
 
 
 

@@ -46,8 +46,9 @@ namespace funkyBubbles
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1200, 692);
+            this.pictureBox1.Size = new System.Drawing.Size(800, 450);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -59,21 +60,22 @@ namespace funkyBubbles
             // 
             this.ScoreBox.BackColor = System.Drawing.SystemColors.Control;
             this.ScoreBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ScoreBox.Location = new System.Drawing.Point(12, 24);
+            this.ScoreBox.Location = new System.Drawing.Point(11, 11);
+            this.ScoreBox.Margin = new System.Windows.Forms.Padding(2);
             this.ScoreBox.Multiline = true;
             this.ScoreBox.Name = "ScoreBox";
             this.ScoreBox.ReadOnly = true;
-            this.ScoreBox.Size = new System.Drawing.Size(185, 46);
+            this.ScoreBox.Size = new System.Drawing.Size(123, 105);
             this.ScoreBox.TabIndex = 1;
+            this.ScoreBox.TextChanged += new System.EventHandler(this.ScoreBox_TextChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ScoreBox);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

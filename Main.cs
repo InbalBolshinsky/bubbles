@@ -16,7 +16,7 @@ namespace funkyBubbles
 {
     public partial class Main : Form
     {
-       // Stream stream = File.Open("score.save", FileMode.Open);
+       /// Stream stream = File.Open("score.save", FileMode.Open);
         public Main()
         {
             InitializeComponent();

@@ -18,6 +18,8 @@ namespace funkyBubbles
 
         public Brush b = new SolidBrush(Color.Yellow);
 
+        int flag;
+
         public Entity(float x, float y, int sizeX,int sizeY)
         {
             this.x = x;
@@ -64,7 +66,7 @@ namespace funkyBubbles
 
         }
 
-        public abstract void draw(Graphics g);
+        public abstract void draw(Graphics g, int flag);
 
 
 

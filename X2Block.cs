@@ -9,7 +9,7 @@ namespace funkyBubbles
 {
     class X2Block : Block
     {
-        Image number1;
+        Image image_X2;
 
 
         public X2Block(float x, float y, int sizeX, int sizeY) : base(x, y, sizeX, sizeY)
@@ -18,14 +18,13 @@ namespace funkyBubbles
             this.sizeY = sizeY;
 
             this.collision = new RectangleF(x, y, sizeX, sizeY);
-            number1 = Image.FromFile("pics\\block_2.png");
+            image_X2 = Image.FromFile("pics\\redHeart.jpg");
 
         }
 
         public void upgrade()
         {
-            number1 = Image.FromFile("pics\\ball.png");
-
+         
             sizeX = 7;
             sizeY = 7;
             UpdateRec();

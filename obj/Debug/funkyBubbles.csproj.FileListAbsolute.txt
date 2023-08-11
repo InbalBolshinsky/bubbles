@@ -18,5 +18,6 @@ C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\funkyBubbles.exe.config
 C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\funkyBubbles.exe
 C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\funkyBubbles.pdb
 C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.csproj.AssemblyReference.cache
-C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.csproj.SuggestedBindingRedirects.cache
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.Main.resources
+C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.Main.resources
+C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.EndGame.resources

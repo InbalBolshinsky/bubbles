@@ -28,7 +28,7 @@ namespace funkyBubbles
             sship = Image.FromFile("pics\\sship.png");
         }
 
-        public override void draw (Graphics g)
+        public override void draw(Graphics g, int flag)
         {
             g.DrawImage(sship, x, y, sizeX, sizeY);
         }

@@ -40,6 +40,9 @@ namespace funkyBubbles
         Graphics g;
         Spaceship player;
 
+        int life_i = 0;
+        int life_j = 0;
+
         public Form1()
         {
 
@@ -99,6 +102,8 @@ namespace funkyBubbles
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+           
+
             ScoreBox.Text = "Lives: " + lives + "  score:" + score;
 
             if (ball.y + ball.collision.Height > Height)
@@ -121,11 +126,11 @@ namespace funkyBubbles
 
 
             RectangleF ship = player.collision;
-            RectangleF boob = ball.collision;
+            RectangleF ball_1 = ball.collision;
             
 
 
-            if (boob.IntersectsWith(ship))
+            if (ball_1.IntersectsWith(ship))
             {
                 dirY = false;
             }
@@ -139,18 +144,18 @@ namespace funkyBubbles
                 {
                     if (blocks[i, j] != null)
                     {
-                        RectangleF brocoly = blocks[i, j].collision;
+                        RectangleF block = blocks[i, j].collision;
 
 
-                        if (boob.IntersectsWith(brocoly))
+                        if (ball_1.IntersectsWith(block))
                         {
 
-                            if (boob.Left < brocoly.Left)
+                            if (ball_1.Left < block.Left)
                                 dirX = false;
                             else
                                 dirX = true;
 
-                            if (boob.Top > brocoly.Bottom)
+                            if (ball_1.Top > block.Bottom)
                                 dirY = true;
                             else
                                 dirY = false;
@@ -167,7 +172,6 @@ namespace funkyBubbles
                                 X2Block tmp = (X2Block)blocks[i, j];
                                 tmp.upgrade();
                                 balls.Add(tmp);
-
                                 gone++;
                             }
                             else
@@ -186,11 +190,11 @@ namespace funkyBubbles
 
             }
             for (int i = 0; i < balls.Count; i++)
-            {                    balls[i].y += 5;//מוריד את האפגרייד
+            {                  
 
                 if (balls[i] != null)
                 {
-                    //balls[i].draw();
+                    balls[i].y += 5;//מוריד את האפגרייד
                     balls[i].UpdateRec();
                     if (balls[i].collision.IntersectsWith(player.collision))
                     {
@@ -225,12 +229,16 @@ namespace funkyBubbles
                     }
                 }
             }
+
+            if(gone == 32 || lives == 0 || ball_1.Bottom == ship.Top)
+            {
+                //הפסד
+            }
+
             pictureBox1.Invalidate();
 
             
         }
-
-
 
 
 
@@ -244,8 +252,8 @@ namespace funkyBubbles
         {
             //e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
 
-            player.draw(e.Graphics);
-            ball.draw(e.Graphics);
+            player.draw(e.Graphics, 0);
+            ball.draw(e.Graphics, 0);
 
             int i = 0;
             int j;
@@ -254,9 +262,10 @@ namespace funkyBubbles
                 for (j = 0; j < 8; j++)
                 {
                     if (blocks[i, j] != null)
-                        blocks[i, j].draw(e.Graphics);
+                        blocks[i, j].draw(e.Graphics, 0);
                 }
             }
+    
         }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)

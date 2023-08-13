@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -25,7 +24,8 @@ namespace funkyBubbles
         int lives = 4;
         int score = 0;
         int point = 10;
-        int gone = 0;
+        int gone = 0; //how may block are gone
+        bool win = false;//are ya winning son?
 
         bool dirX;//direction of each entity on x
         bool dirY;//direction of each entity on y
@@ -97,12 +97,34 @@ namespace funkyBubbles
 
             dirX = !dirX;
         }
+        //שינוי:
+        private void StopTimer()
+        {
+           timer1.Stop();
+        }
 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            RectangleF ship = player.collision;
+            RectangleF ball_1 = ball.collision;
 
-           
+            if (gone == 32 || lives == 0 )
+            // || ball_1.Bottom < ship.Top)
+            {
+                if (gone < 32)
+                    win = false;
+                else
+                    win = true;
+
+                StopTimer();
+                EndGame end = new EndGame(score, win);
+                Hide();
+                end.ShowDialog();
+                Close();
+                
+            }
+           //סוף שינוי
 
             ScoreBox.Text = "Lives: " + lives + "  score:" + score;
 
@@ -123,13 +145,7 @@ namespace funkyBubbles
 
             ball.x += (dirX) ? Vel : -Vel;
             ball.y += (dirY) ? VelY : -VelY;
-
-
-            RectangleF ship = player.collision;
-            RectangleF ball_1 = ball.collision;
             
-
-
             if (ball_1.IntersectsWith(ship))
             {
                 dirY = false;
@@ -189,6 +205,7 @@ namespace funkyBubbles
 
 
             }
+
             for (int i = 0; i < balls.Count; i++)
             {                  
 
@@ -230,19 +247,10 @@ namespace funkyBubbles
                 }
             }
 
-            if(gone == 32 || lives == 0 || ball_1.Bottom == ship.Top)
-            {
-                //הפסד
-            }
-
             pictureBox1.Invalidate();
 
             
         }
-
-
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
 

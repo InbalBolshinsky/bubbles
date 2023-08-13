@@ -7,16 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace funkyBubbles
 {
+  
     public partial class EndGame : Form
     {
-        public EndGame()
+        bool winner;
+        public EndGame(int score, bool win)
         {
             InitializeComponent();
+            if (win == true)
+                winner = true;
+            else
+                winner = false;
+           
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -28,12 +37,15 @@ namespace funkyBubbles
 
         private void EndGame_Load(object sender, EventArgs e)
         {
-
+            if (winner == true)
+                textBox1.Text = "YOU WON!";
+            else
+                textBox1.Text = "YOU LOST!";
         }
-
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+            
         }
     }
 }

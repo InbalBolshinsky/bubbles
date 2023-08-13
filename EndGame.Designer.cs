@@ -38,12 +38,10 @@ namespace funkyBubbles
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(274, 252);
-            this.textBox1.Multiline = true;
+            this.textBox1.Location = new System.Drawing.Point(267, 136);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 26);
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Enter your name:";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // EndGame

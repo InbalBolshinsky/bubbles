@@ -18,10 +18,10 @@ namespace funkyBubbles
     public partial class EndGame : Form
     {
         bool winner;
-        int score;
+        string score;
         string name;
         string status;
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database.mdf;Integrated Security=True");
 
         public EndGame(int score, bool win)
         {
@@ -40,7 +40,7 @@ namespace funkyBubbles
                 statusTextBox.Text = "YOU LOST!"; 
                 this.status = "LOOser";
             }
-             this.score = score;
+             this.score = score.ToString();
             
              scoreTextBox.Text = score.ToString();
         }
@@ -56,9 +56,7 @@ namespace funkyBubbles
         private void EndGame_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseDataSet.scoring' table. You can move, or remove it, as needed.
-            this.scoringTableAdapter.Fill(this.databaseDataSet.scoring);
-            // TODO: This line of code loads data into the 'databaseDataSet.scoring' table. You can move, or remove it, as needed.
-            this.scoringTableAdapter.Fill(this.databaseDataSet.scoring);
+           // this.scoringTableAdapter.Fill(this.databaseDataSet.scoring);
             if (winner == true)
                 textBox1.Text = "YOU WON!";
             else
@@ -77,7 +75,7 @@ namespace funkyBubbles
 
         private void statusTextBox_TextChanged(object sender, EventArgs e)
         {
-                 if (winner == true)
+            if (winner == true)
                 statusTextBox.Text = "YOU WON!";
             else
                 statusTextBox.Text = "YOU LOST!";
@@ -90,7 +88,7 @@ namespace funkyBubbles
 
         private void button1_Click_1(object sender, EventArgs e)
         {           
-            string query = "INSERT INTO scoring ( score,name,status) VALUES ( @score,@name,@status)";
+            string query = "INSERT INTO dbo.scoring (score,name,status) VALUES (@score, @name, @status)";
 
             con.Open();
             //SqlDataAdapter sda = new SqlDataAdapter("insert into EndGame(score,name,status)values('"+scoreTextBox+"','"+nameTextBox+ "','" + statusTextBox + "')",con);
@@ -104,6 +102,14 @@ namespace funkyBubbles
             }
 
             con.Close();
+        }
+
+        private void replay_Click(object sender, EventArgs e)
+        {
+            Main newGame = new Main();
+            Hide();
+            newGame.ShowDialog();
+            Close();
         }
     }
 }

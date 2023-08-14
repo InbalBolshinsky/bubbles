@@ -48,6 +48,7 @@ namespace funkyBubbles
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.replay = new System.Windows.Forms.Button();
             scoreLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             statusLabel = new System.Windows.Forms.Label();
@@ -60,37 +61,39 @@ namespace funkyBubbles
             // scoreLabel
             // 
             scoreLabel.AutoSize = true;
-            scoreLabel.Location = new System.Drawing.Point(35, 76);
+            scoreLabel.Location = new System.Drawing.Point(52, 117);
+            scoreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             scoreLabel.Name = "scoreLabel";
-            scoreLabel.Size = new System.Drawing.Size(36, 13);
+            scoreLabel.Size = new System.Drawing.Size(52, 20);
             scoreLabel.TabIndex = 1;
             scoreLabel.Text = "score:";
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(35, 102);
+            nameLabel.Location = new System.Drawing.Point(52, 157);
+            nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(36, 13);
+            nameLabel.Size = new System.Drawing.Size(53, 20);
             nameLabel.TabIndex = 3;
             nameLabel.Text = "name:";
             // 
             // statusLabel
             // 
             statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(35, 128);
+            statusLabel.Location = new System.Drawing.Point(52, 197);
+            statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(38, 13);
+            statusLabel.Size = new System.Drawing.Size(57, 20);
             statusLabel.TabIndex = 5;
             statusLabel.Text = "status:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 38);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(218, 58);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
+            this.textBox1.Size = new System.Drawing.Size(218, 26);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -117,29 +120,32 @@ namespace funkyBubbles
             // scoreTextBox
             // 
             this.scoreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.scoringBindingSource, "score", true));
-            this.scoreTextBox.Location = new System.Drawing.Point(79, 73);
+            this.scoreTextBox.Location = new System.Drawing.Point(118, 112);
+            this.scoreTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.scoreTextBox.Name = "scoreTextBox";
             this.scoreTextBox.ReadOnly = true;
-            this.scoreTextBox.Size = new System.Drawing.Size(100, 20);
+            this.scoreTextBox.Size = new System.Drawing.Size(148, 26);
             this.scoreTextBox.TabIndex = 2;
             this.scoreTextBox.TextChanged += new System.EventHandler(this.scoreTextBox_TextChanged);
             // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.scoringBindingSource, "name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(79, 99);
+            this.nameTextBox.Location = new System.Drawing.Point(118, 152);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(148, 26);
             this.nameTextBox.TabIndex = 4;
             this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
             // statusTextBox
             // 
             this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.scoringBindingSource, "status", true));
-            this.statusTextBox.Location = new System.Drawing.Point(79, 125);
+            this.statusTextBox.Location = new System.Drawing.Point(118, 192);
+            this.statusTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.ReadOnly = true;
-            this.statusTextBox.Size = new System.Drawing.Size(100, 20);
+            this.statusTextBox.Size = new System.Drawing.Size(148, 26);
             this.statusTextBox.TabIndex = 6;
             this.statusTextBox.TextChanged += new System.EventHandler(this.statusTextBox_TextChanged);
             // 
@@ -152,44 +158,64 @@ namespace funkyBubbles
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.scoringDataGridView.DataSource = this.scoringBindingSource;
-            this.scoringDataGridView.Location = new System.Drawing.Point(50, 168);
+            this.scoringDataGridView.Location = new System.Drawing.Point(75, 258);
+            this.scoringDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.scoringDataGridView.Name = "scoringDataGridView";
-            this.scoringDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.scoringDataGridView.RowHeadersWidth = 62;
+            this.scoringDataGridView.Size = new System.Drawing.Size(450, 338);
             this.scoringDataGridView.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "score";
             this.dataGridViewTextBoxColumn1.HeaderText = "score";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "name";
             this.dataGridViewTextBoxColumn2.HeaderText = "name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "status";
             this.dataGridViewTextBoxColumn3.HeaderText = "status";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(217, 99);
+            this.button1.Location = new System.Drawing.Point(324, 112);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(112, 35);
             this.button1.TabIndex = 8;
-            this.button1.Text = "done";
+            this.button1.Text = "save game";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // replay
+            // 
+            this.replay.Location = new System.Drawing.Point(324, 152);
+            this.replay.Name = "replay";
+            this.replay.Size = new System.Drawing.Size(112, 33);
+            this.replay.TabIndex = 9;
+            this.replay.Text = "play again";
+            this.replay.UseVisualStyleBackColor = true;
+            this.replay.Click += new System.EventHandler(this.replay_Click);
+            // 
             // EndGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 408);
+            this.ClientSize = new System.Drawing.Size(800, 628);
+            this.Controls.Add(this.replay);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.scoringDataGridView);
             this.Controls.Add(scoreLabel);
@@ -199,7 +225,6 @@ namespace funkyBubbles
             this.Controls.Add(statusLabel);
             this.Controls.Add(this.statusTextBox);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EndGame";
             this.Text = "EndGame";
             this.Load += new System.EventHandler(this.EndGame_Load);
@@ -229,5 +254,6 @@ namespace funkyBubbles
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button replay;
     }
 }

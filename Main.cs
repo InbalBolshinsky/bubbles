@@ -13,6 +13,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace funkyBubbles
 {
+    
     public partial class Main : Form
     {
        /// Stream stream = File.Open("score.save", FileMode.Open);

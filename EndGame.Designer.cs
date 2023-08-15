@@ -30,68 +30,74 @@ namespace funkyBubbles
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EndGame));
-            System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label scoreLabel;
             System.Windows.Forms.Label statusLabel;
-            this.modelDataSet = new funkyBubbles.ModelDataSet();
-            this.scoringBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.scoringTableAdapter = new funkyBubbles.ModelDataSetTableAdapters.scoringTableAdapter();
-            this.tableAdapterManager = new funkyBubbles.ModelDataSetTableAdapters.TableAdapterManager();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EndGame));
+            System.Windows.Forms.Label idLabel;
             this.scoringBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.scoringBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.idNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.scoreTextBox = new System.Windows.Forms.TextBox();
             this.statusTextBox = new System.Windows.Forms.TextBox();
+            this.scoringBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.modelDataSet = new funkyBubbles.ModelDataSet();
+            this.scoringTableAdapter = new funkyBubbles.ModelDataSetTableAdapters.scoringTableAdapter();
+            this.tableAdapterManager = new funkyBubbles.ModelDataSetTableAdapters.TableAdapterManager();
+            this.idTextBox = new System.Windows.Forms.TextBox();
             this.scoringDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            idLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             scoreLabel = new System.Windows.Forms.Label();
             statusLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scoringBindingSource)).BeginInit();
+            idLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.scoringBindingNavigator)).BeginInit();
             this.scoringBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoringBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoringDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // modelDataSet
+            // nameLabel
             // 
-            this.modelDataSet.DataSetName = "ModelDataSet";
-            this.modelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(52, 62);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(36, 13);
+            nameLabel.TabIndex = 3;
+            nameLabel.Text = "name:";
             // 
-            // scoringBindingSource
+            // scoreLabel
             // 
-            this.scoringBindingSource.DataMember = "scoring";
-            this.scoringBindingSource.DataSource = this.modelDataSet;
+            scoreLabel.AutoSize = true;
+            scoreLabel.Location = new System.Drawing.Point(52, 88);
+            scoreLabel.Name = "scoreLabel";
+            scoreLabel.Size = new System.Drawing.Size(36, 13);
+            scoreLabel.TabIndex = 5;
+            scoreLabel.Text = "score:";
             // 
-            // scoringTableAdapter
+            // statusLabel
             // 
-            this.scoringTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.scoringTableAdapter = this.scoringTableAdapter;
-            this.tableAdapterManager.UpdateOrder = funkyBubbles.ModelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            statusLabel.AutoSize = true;
+            statusLabel.Location = new System.Drawing.Point(52, 114);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new System.Drawing.Size(38, 13);
+            statusLabel.TabIndex = 7;
+            statusLabel.Text = "status:";
             // 
             // scoringBindingNavigator
             // 
@@ -123,6 +129,33 @@ namespace funkyBubbles
             this.scoringBindingNavigator.TabIndex = 0;
             this.scoringBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            this.bindingNavigatorCountItem.Visible = false;
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -131,6 +164,7 @@ namespace funkyBubbles
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            this.bindingNavigatorMoveFirstItem.Visible = false;
             // 
             // bindingNavigatorMovePreviousItem
             // 
@@ -140,6 +174,7 @@ namespace funkyBubbles
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.bindingNavigatorMovePreviousItem.Visible = false;
             // 
             // bindingNavigatorSeparator
             // 
@@ -155,17 +190,11 @@ namespace funkyBubbles
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            this.bindingNavigatorPositionItem.Visible = false;
             // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -176,6 +205,7 @@ namespace funkyBubbles
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
+            this.bindingNavigatorMoveNextItem.Visible = false;
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -185,30 +215,12 @@ namespace funkyBubbles
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
+            this.bindingNavigatorMoveLastItem.Visible = false;
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // scoringBindingNavigatorSaveItem
             // 
@@ -219,34 +231,6 @@ namespace funkyBubbles
             this.scoringBindingNavigatorSaveItem.Text = "Save Data";
             this.scoringBindingNavigatorSaveItem.Click += new System.EventHandler(this.scoringBindingNavigatorSaveItem_Click_1);
             // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(52, 33);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
-            idLabel.TabIndex = 1;
-            idLabel.Text = "Id:";
-            // 
-            // idNumericUpDown
-            // 
-            this.idNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.scoringBindingSource, "Id", true));
-            this.idNumericUpDown.Location = new System.Drawing.Point(96, 33);
-            this.idNumericUpDown.Name = "idNumericUpDown";
-            this.idNumericUpDown.ReadOnly = true;
-            this.idNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.idNumericUpDown.TabIndex = 2;
-            this.idNumericUpDown.ValueChanged += new System.EventHandler(this.idNumericUpDown_ValueChanged);
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(52, 62);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(36, 13);
-            nameLabel.TabIndex = 3;
-            nameLabel.Text = "name:";
-            // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.scoringBindingSource, "name", true));
@@ -254,15 +238,6 @@ namespace funkyBubbles
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(120, 20);
             this.nameTextBox.TabIndex = 4;
-            // 
-            // scoreLabel
-            // 
-            scoreLabel.AutoSize = true;
-            scoreLabel.Location = new System.Drawing.Point(52, 88);
-            scoreLabel.Name = "scoreLabel";
-            scoreLabel.Size = new System.Drawing.Size(36, 13);
-            scoreLabel.TabIndex = 5;
-            scoreLabel.Text = "score:";
             // 
             // scoreTextBox
             // 
@@ -272,15 +247,7 @@ namespace funkyBubbles
             this.scoreTextBox.ReadOnly = true;
             this.scoreTextBox.Size = new System.Drawing.Size(120, 20);
             this.scoreTextBox.TabIndex = 6;
-            // 
-            // statusLabel
-            // 
-            statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(52, 114);
-            statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(38, 13);
-            statusLabel.TabIndex = 7;
-            statusLabel.Text = "status:";
+            this.scoreTextBox.TextChanged += new System.EventHandler(this.scoreTextBox_TextChanged);
             // 
             // statusTextBox
             // 
@@ -290,6 +257,46 @@ namespace funkyBubbles
             this.statusTextBox.ReadOnly = true;
             this.statusTextBox.Size = new System.Drawing.Size(120, 20);
             this.statusTextBox.TabIndex = 8;
+            this.statusTextBox.TextChanged += new System.EventHandler(this.statusTextBox_TextChanged);
+            // 
+            // scoringBindingSource
+            // 
+            this.scoringBindingSource.DataMember = "scoring";
+            this.scoringBindingSource.DataSource = this.modelDataSet;
+            // 
+            // modelDataSet
+            // 
+            this.modelDataSet.DataSetName = "ModelDataSet";
+            this.modelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // scoringTableAdapter
+            // 
+            this.scoringTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.scoringTableAdapter = this.scoringTableAdapter;
+            this.tableAdapterManager.UpdateOrder = funkyBubbles.ModelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(69, 36);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.TabIndex = 9;
+            idLabel.Text = "Id:";
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.scoringBindingSource, "Id", true));
+            this.idTextBox.Location = new System.Drawing.Point(94, 33);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(120, 20);
+            this.idTextBox.TabIndex = 10;
+            this.idTextBox.TextChanged += new System.EventHandler(this.idTextBox_TextChanged);
             // 
             // scoringDataGridView
             // 
@@ -301,10 +308,10 @@ namespace funkyBubbles
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.scoringDataGridView.DataSource = this.scoringBindingSource;
-            this.scoringDataGridView.Location = new System.Drawing.Point(367, 58);
+            this.scoringDataGridView.Location = new System.Drawing.Point(244, 28);
             this.scoringDataGridView.Name = "scoringDataGridView";
-            this.scoringDataGridView.Size = new System.Drawing.Size(433, 220);
-            this.scoringDataGridView.TabIndex = 9;
+            this.scoringDataGridView.Size = new System.Drawing.Size(440, 328);
+            this.scoringDataGridView.TabIndex = 10;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -337,7 +344,7 @@ namespace funkyBubbles
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.scoringDataGridView);
             this.Controls.Add(idLabel);
-            this.Controls.Add(this.idNumericUpDown);
+            this.Controls.Add(this.idTextBox);
             this.Controls.Add(nameLabel);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(scoreLabel);
@@ -348,12 +355,11 @@ namespace funkyBubbles
             this.Name = "EndGame";
             this.Text = "Endgame";
             this.Load += new System.EventHandler(this.EndGame_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scoringBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoringBindingNavigator)).EndInit();
             this.scoringBindingNavigator.ResumeLayout(false);
             this.scoringBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoringBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoringDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -379,10 +385,10 @@ namespace funkyBubbles
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton scoringBindingNavigatorSaveItem;
-        private System.Windows.Forms.NumericUpDown idNumericUpDown;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox scoreTextBox;
         private System.Windows.Forms.TextBox statusTextBox;
+        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.DataGridView scoringDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

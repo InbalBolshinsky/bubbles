@@ -389,10 +389,10 @@ namespace funkyBubbles {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public scoringRow AddscoringRow(int Id, string name, string score, string status) {
+            public scoringRow AddscoringRow(string name, string score, string status) {
                 scoringRow rowscoringRow = ((scoringRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         name,
                         score,
                         status};
@@ -444,6 +444,8 @@ namespace funkyBubbles {
                 base.Columns.Add(this.columnstatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnname.MaxLength = 20;

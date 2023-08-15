@@ -32,13 +32,13 @@ namespace funkyBubbles
             if (win == true)
             {
                 winner = true;
-                //statusTextBox.Text = "YOU WON!";
+                statusTextBox.Text = "YOU WON!";
                 this.status = "Winner";
             }
             else
             {
                 winner = false;
-                //statusTextBox.Text = "YOU LOST!";
+                statusTextBox.Text = "YOU LOST!";
                 this.status = "Loser";
             }
             this.score = score.ToString();
@@ -75,14 +75,32 @@ namespace funkyBubbles
         {
             if (isFirstLoad)
             {
-                 id++;
+                
                 isFirstLoad = false;
             }
         }
 
         private void idNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-           
+            //id++;
+        }
+
+        private void statusTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (winner == true)
+                statusTextBox.Text = "Winner";
+            else
+                statusTextBox.Text = "Loser";
+        }
+
+        private void scoreTextBox_TextChanged(object sender, EventArgs e)
+        {
+            scoreTextBox.Text = score;
+        }
+
+        private void idTextBox_TextChanged(object sender, EventArgs e)
+        {
+            idTextBox.Text = id.ToString();
         }
     }
 }

@@ -75,10 +75,10 @@ SELECT Id, name, score, status FROM scoring WHERE (Id = @Id)</CommandText>
   <xs:element name="ModelDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ModelDataSet" msprop:Generator_UserDSName="ModelDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="scoring" msprop:Generator_TableClassName="scoringDataTable" msprop:Generator_TableVarName="tablescoring" msprop:Generator_TablePropName="scoring" msprop:Generator_RowDeletingName="scoringRowDeleting" msprop:Generator_RowChangingName="scoringRowChanging" msprop:Generator_RowEvHandlerName="scoringRowChangeEventHandler" msprop:Generator_RowDeletedName="scoringRowDeleted" msprop:Generator_UserTableName="scoring" msprop:Generator_RowChangedName="scoringRowChanged" msprop:Generator_RowEvArgName="scoringRowChangeEvent" msprop:Generator_RowClassName="scoringRow">
+        <xs:element name="scoring" msprop:Generator_TableClassName="scoringDataTable" msprop:Generator_TableVarName="tablescoring" msprop:Generator_RowChangedName="scoringRowChanged" msprop:Generator_TablePropName="scoring" msprop:Generator_RowDeletingName="scoringRowDeleting" msprop:Generator_RowChangingName="scoringRowChanging" msprop:Generator_RowEvHandlerName="scoringRowChangeEventHandler" msprop:Generator_RowDeletedName="scoringRowDeleted" msprop:Generator_RowClassName="scoringRow" msprop:Generator_UserTableName="scoring" msprop:Generator_RowEvArgName="scoringRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
               <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

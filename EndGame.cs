@@ -75,14 +75,14 @@ namespace funkyBubbles
         {
             if (isFirstLoad)
             {
-                
+                 id++;
                 isFirstLoad = false;
             }
         }
 
         private void idNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            id++;
+           
         }
     }
 }

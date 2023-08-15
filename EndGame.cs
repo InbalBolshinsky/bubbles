@@ -11,11 +11,11 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Data.SqlClient;
-use mydb;
+
 
 namespace funkyBubbles
 {
-  
+
     public partial class EndGame : Form
     {
         bool winner;
@@ -23,12 +23,10 @@ namespace funkyBubbles
         string name;
         string status;
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database.mdf;Integrated Security=True");
-       
-     
+
+
         public EndGame(int score, bool win)
         {
-            
-
             InitializeComponent();
             if (win == true)
             {
@@ -39,12 +37,12 @@ namespace funkyBubbles
             else
             {
                 winner = false;
-                statusTextBox.Text = "YOU LOST!"; 
+                statusTextBox.Text = "YOU LOST!";
                 this.status = "Loser";
             }
-             this.score = score.ToString();
-            
-             scoreTextBox.Text = score.ToString();
+            this.score = score.ToString();
+
+            scoreTextBox.Text = score.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,16 +56,18 @@ namespace funkyBubbles
         private void EndGame_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseDataSet.scoring' table. You can move, or remove it, as needed.
-           // this.scoringTableAdapter.Fill(this.databaseDataSet.scoring);
+            // this.scoringTableAdapter.Fill(this.databaseDataSet.scoring);
             if (winner == true)
                 textBox1.Text = "YOU WON!";
             else
                 textBox1.Text = "YOU LOST!";
+
+
         }
-        
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void scoreTextBox_TextChanged(object sender, EventArgs e)
@@ -88,28 +88,36 @@ namespace funkyBubbles
             this.name = nameTextBox.Text;
         }
 
+        private void bind_data()
+        {
+            SqlCommand cmd;
+            string sql = "Select * from scoring";
+            cmd = new SqlCommand(sql, con);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            dt.Clear();
+            da.Fill(dt);
+
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
-        {           
-            //string query = "INSERT INTO dbo.scoring (score,status) VALUES (@score, @status)";
+        {
             string query = "INSERT INTO dbo.scoring (score,name,status) VALUES (@score, @name, @status)";
 
             con.Open();
             //SqlDataAdapter sda = new SqlDataAdapter("insert into EndGame(score,name,status)values('"+scoreTextBox+"','"+nameTextBox+ "','" + statusTextBox + "')",con);
             //sda.SelectCommand.ExecuteNonQuery();
-        
-            using (SqlCommand command = new SqlCommand(query, con)) 
+
+            using (SqlCommand command = new SqlCommand(query, con))
             {
-               command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@name", name);
                 command.Parameters.AddWithValue("@score", score);
                 command.Parameters.AddWithValue("@status", status);
+                bind_data();
                 command.ExecuteNonQuery();
             }
-            SqlCommand cmd;
-            SqlDataReader dataReader;
-            string sql = "Select * from scoring";
-            cmd = new SqlCommand(sql, con);
-            dataReader = cmd.ExecuteReader();
-
+           
             con.Close();
         }
 

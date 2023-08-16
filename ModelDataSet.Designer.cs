@@ -389,7 +389,7 @@ namespace funkyBubbles {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public scoringRow AddscoringRow(string name, string score, string status) {
+            public scoringRow AddscoringRow(int name, string score, string status) {
                 scoringRow rowscoringRow = ((scoringRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -436,7 +436,7 @@ namespace funkyBubbles {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnname = new global::System.Data.DataColumn("name", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname);
                 this.columnscore = new global::System.Data.DataColumn("score", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnscore);
@@ -447,8 +447,10 @@ namespace funkyBubbles {
                 this.columnId.AutoIncrement = true;
                 this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
+                this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnname.MaxLength = 20;
+                this.columnname.AutoIncrementSeed = -1;
+                this.columnname.AutoIncrementStep = -1;
                 this.columnscore.AllowDBNull = false;
                 this.columnscore.MaxLength = 10;
                 this.columnstatus.AllowDBNull = false;
@@ -606,10 +608,10 @@ namespace funkyBubbles {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string name {
+            public int name {
                 get {
                     try {
-                        return ((string)(this[this.tablescoring.nameColumn]));
+                        return ((int)(this[this.tablescoring.nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'name\' in table \'scoring\' is DBNull.", e);

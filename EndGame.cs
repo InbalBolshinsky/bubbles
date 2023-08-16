@@ -47,21 +47,17 @@ namespace funkyBubbles
         }
 
 
-
-        private void scoringBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.scoringBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.modelDataSet);
-
-        }
-
         private void scoringBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
-            this.Validate();
-            this.scoringBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.modelDataSet);
+            if (isFirstLoad)
+            {
+                isFirstLoad = false;
+                scoringBindingNavigatorSaveItem.Enabled = false;
 
+                this.Validate();
+                this.scoringBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.modelDataSet);
+            }
         }
 
         private void EndGame_Load(object sender, EventArgs e)
@@ -74,9 +70,9 @@ namespace funkyBubbles
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             if (isFirstLoad)
-            {
-                
+            {            
                 isFirstLoad = false;
+                bindingNavigatorAddNewItem.Enabled = false;
             }
         }
 
@@ -95,12 +91,27 @@ namespace funkyBubbles
 
         private void scoreTextBox_TextChanged(object sender, EventArgs e)
         {
-            scoreTextBox.Text = score;
+            scoreTextBox.Text = "not a null";
         }
 
         private void idTextBox_TextChanged(object sender, EventArgs e)
         {
             idTextBox.Text = id.ToString();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            name = nameTextBox.Text;
+        }
+
+        private void scoringDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

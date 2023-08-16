@@ -144,7 +144,7 @@ namespace funkyBubbles
 
                 StopTimer();
                 EndGame end = new EndGame(score, win);
-                Hide();
+                Hide(); 
                 end.ShowDialog();
                 Close();
                 

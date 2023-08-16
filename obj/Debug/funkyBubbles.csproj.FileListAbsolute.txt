@@ -22,7 +22,7 @@ C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\f
 C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.Main.resources
 C:\Users\inbal\Desktop\bubbles\bubbles\obj\Debug\funkyBubbles.EndGame.resources
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\obj\Debug\funkyBubbles.EndGame.resources
-C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\Database.mdf
-C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\Database_log.ldf
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\ScoreBase.mdf
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\ScoreBase_log.ldf
+C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\ScoreBase.mdf
+C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\ScoreBase_log.ldf

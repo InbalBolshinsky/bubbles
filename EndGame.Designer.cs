@@ -134,6 +134,7 @@ namespace funkyBubbles
             // 
             // scoreTextBox
             // 
+            this.scoreTextBox.BackColor = System.Drawing.Color.PaleTurquoise;
             this.scoreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.scoringBindingSource, "score", true));
             this.scoreTextBox.Location = new System.Drawing.Point(144, 131);
             this.scoreTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

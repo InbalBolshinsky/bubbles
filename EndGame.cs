@@ -91,7 +91,10 @@ namespace funkyBubbles
 
         private void scoreTextBox_TextChanged(object sender, EventArgs e)
         {
-            scoreTextBox.Text = "not a null";
+            if (score == null)
+                scoreTextBox.Text = "is a null!";
+            else
+                scoreTextBox.Text = score;
         }
 
         private void idTextBox_TextChanged(object sender, EventArgs e)

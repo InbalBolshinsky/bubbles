@@ -32,3 +32,20 @@ C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\Main.Designer.cs
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\Main.resx
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\Main.cs
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\Main.Designer.cs
+C:\Github_projects\bubbles\obj\Debug\funkyBubbles.csproj.AssemblyReference.cache
+C:\Github_projects\bubbles\obj\Debug\funkyBubbles.EndGame.resources
+C:\Github_projects\bubbles\obj\Debug\funkyBubbles.Form1.resources
+C:\Github_projects\bubbles\obj\Debug\funkyBubbles.Main.resources
+C:\Github_projects\bubbles\obj\Debug\funkyBubbles.Properties.Resources.resources
+C:\Github_projects\bubbles\obj\Debug\funkyBubbles.csproj.GenerateResource.cache
+C:\Github_projects\bubbles\obj\Debug\funkyBubbles.csproj.CoreCompileInputs.cache
+C:\Github_projects\bubbles\obj\Debug\funkyBubbles.exe
+C:\Github_projects\bubbles\obj\Debug\funkyBubbles.pdb
+C:\Github_projects\bubbles\bin\Debug\ScoreBase.mdf
+C:\Github_projects\bubbles\bin\Debug\ScoreBase_log.ldf
+C:\Github_projects\bubbles\bin\Debug\Main.resx
+C:\Github_projects\bubbles\bin\Debug\Main.cs
+C:\Github_projects\bubbles\bin\Debug\Main.Designer.cs
+C:\Github_projects\bubbles\bin\Debug\funkyBubbles.exe.config
+C:\Github_projects\bubbles\bin\Debug\funkyBubbles.exe
+C:\Github_projects\bubbles\bin\Debug\funkyBubbles.pdb

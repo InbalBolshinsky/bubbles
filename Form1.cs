@@ -20,10 +20,13 @@ namespace funkyBubbles
         const int ROWS = 4;
         const int COLS = 8;
 
+        bool game_started;
+
         List<Block> special_balls;// רשימה מקושרת של בלוקים מיוחדים שהופכים לכדורים ויורדים למטה
         int offset = 20;
         int outball = 0;
         Ball ball;
+        int ball_start_Y;
         Image ball_image;
 
         int lives = 4;
@@ -51,7 +54,9 @@ namespace funkyBubbles
             player = new Spaceship(Width / 2, Height - (Height / 8), Width / 12, Height / 12);
             special_balls = new List<Block>();
             ball_image = Image.FromFile("pics\\ball.png");
+            ball_start_Y = Height - Height / 6;
 
+            game_started = false;
             Random r = new Random();
             Random r_block = new Random();//generates coordinates of Lifeblock
         
@@ -71,7 +76,7 @@ namespace funkyBubbles
             if(c_X2 == c_life && r_X2 == r_life)
                 c_X2 = r_block.Next(0, COLS - 1);
 
-            ball = new Ball(Width / 2, Height, Width / 30);
+            ball = new Ball(Width / 2, ball_start_Y, Width / 50);
             dirX = true;
             dirY = false;
 
@@ -131,8 +136,8 @@ namespace funkyBubbles
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            RectangleF ship = player.collision;
-            RectangleF ball_1 = ball.collision;
+            Rectangle ship = player.collision;
+            Rectangle boobs = ball.collision;
 
             if (gone == (ROWS*COLS) || lives == 0 )
             {
@@ -155,9 +160,14 @@ namespace funkyBubbles
             if (ball.y + ball.collision.Height > Height)
             {
                 lives--;
-                ball.x= Width / 2;//מאתחל כדור אחרי המוות
-                ball.y= Height /2;
+                game_started = false;
+                dirY = false;
+
+                ball.x= Width / 2; //מאתחל כדור אחרי המוות
+                ball.y= ball_start_Y;
             }
+
+
             if (ball.y < 0)
                 dirY = true;
             if (ball.x + ball.collision.Width > Width)
@@ -167,10 +177,13 @@ namespace funkyBubbles
 
             ball.UpdateRec();
 
-            ball.x += (dirX) ? Vel : -Vel;
-            ball.y += (dirY) ? VelY : -VelY;
-            
-            if (ball_1.IntersectsWith(ship))
+            if (game_started)
+            {
+                ball.x += (dirX) ? Vel : -Vel;
+                ball.y += (dirY) ? VelY : -VelY;
+            }
+
+            if (boobs.IntersectsWith(ship))
             {
                 dirY = false;
             }
@@ -184,21 +197,23 @@ namespace funkyBubbles
                 {
                     if (blocks[i, j] != null)
                     {
-                        RectangleF block = blocks[i, j].collision;
+                        Rectangle block = blocks[i, j].collision;
 
 
-                        if (ball_1.IntersectsWith(block))
+                        if (boobs.IntersectsWith(block))
                         {
 
-                            if (ball_1.Left < block.Left)
+                            if (boobs.Right > block.Left)
                                 dirX = false;
-                            else
+
+                            if (boobs.Left < block.Right)
                                 dirX = true;
 
-                            if (ball_1.Top > block.Bottom)
-                                dirY = true;
-                            else
+                            if (boobs.Top < block.Bottom)
                                 dirY = false;
+
+                            if (boobs.Bottom > block.Top)
+                                dirY = true;
 
                             if (blocks[i, j] is Lifeblock )
                             {
@@ -285,7 +300,6 @@ namespace funkyBubbles
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
 
             player.draw(e.Graphics, 0);
-            ball.draw(e.Graphics, 0);
 
             int i = 0;
             int j;
@@ -298,6 +312,7 @@ namespace funkyBubbles
                 }
             }
     
+            ball.draw(e.Graphics, 0);
         }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
@@ -315,7 +330,8 @@ namespace funkyBubbles
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            dirX = !dirX;
+            //dirX = !dirX;
+            game_started = true;
         }
 
         private void ScoreBox_TextChanged(object sender, EventArgs e)

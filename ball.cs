@@ -12,7 +12,7 @@ namespace funkyBubbles
     class Ball : Entity 
     {
         Image ball;
-        public Ball(float x, float y, int sizeX) : base(x, y, sizeX, sizeX)
+        public Ball(int x, int y, int sizeX) : base(x, y, sizeX, sizeX)
         {
             b = new SolidBrush(Color.Red);
 

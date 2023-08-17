@@ -6,13 +6,12 @@ namespace funkyBubbles
     {
         Image image_block;
         Pen outline;
-        public Block(float x, float y, int sizeX, int sizeY) : base(x, y, sizeX, sizeY)
+        public Block(int x, int y , int sizeX, int sizeY) : base(x, y, sizeX, sizeY)
         {
-            outline= new Pen(Color.White,sizeX/5);
+            outline= new Pen(Color.Black,sizeX/10);
             this.sizeX = sizeX;
             this.sizeY = sizeY;
 
-            this.collision = new RectangleF(x, y, sizeX, sizeY);
             //image_block = Image.FromFile("pics\\block_2.png");
             image_block = Image.FromFile("pics\\block_2.png");
         }
@@ -27,7 +26,7 @@ namespace funkyBubbles
             //g.DrawImage(image_block, x, y, sizeX, sizeY);
 
            g.FillRectangle(b, collision);
-            g.DrawRectangle(outline, collision);
+           g.DrawRectangle(outline, collision);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace funkyBubbles
         public bool isClosed;
         int animInt;
 
-        public Spaceship(float x, float y, int sizeX, int sizeY) : base(x, y, sizeX, sizeY)
+        public Spaceship(int x, int y, int sizeX, int sizeY) : base(x, y, sizeX, sizeY)
         {
          
             b = new SolidBrush(Color.Yellow);

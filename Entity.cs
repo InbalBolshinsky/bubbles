@@ -9,18 +9,18 @@ namespace funkyBubbles
 {
     public abstract class Entity
     {
-        public float x, y;
+        public int x, y;
 
         public int Dir = 0;
         public int lastDir = 1;
-        public float sizeX,sizeY;
-        public RectangleF collision;
+        public int sizeX,sizeY;
+        public Rectangle collision;
 
-        public Brush b = new SolidBrush(Color.Yellow);
+        public Brush b = new SolidBrush(Color.Blue);
 
         int flag;
 
-        public Entity(float x, float y, int sizeX,int sizeY)
+        public Entity(int x, int y, int sizeX,int sizeY)
         {
             this.x = x;
             this.y = y;
@@ -28,7 +28,7 @@ namespace funkyBubbles
             this.sizeX = sizeX;
             this.sizeY = sizeY; 
 
-            this.collision = new RectangleF(x, y, sizeX, sizeY);
+            this.collision = new Rectangle(x, y, sizeX, sizeY);
 
         }
 

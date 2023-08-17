@@ -118,10 +118,10 @@ namespace funkyBubbles
             }
         }
         
-        private void Form1_MouseClick(object sender, MouseEventArgs e)//למחוק בסוף
-        { 
-            dirX = !dirX;
-        }
+        //private void Form1_MouseClick(object sender, MouseEventArgs e)//למחוק בסוף
+        //{ 
+        //    dirX = !dirX;
+        //}
         
         private void StopTimer()
         {
@@ -135,7 +135,6 @@ namespace funkyBubbles
             RectangleF ball_1 = ball.collision;
 
             if (gone == (ROWS*COLS) || lives == 0 )
-            // || ball_1.Bottom < ship.Top)
             {
                 if (gone < (ROWS*COLS))
                     win = false;
@@ -283,7 +282,7 @@ namespace funkyBubbles
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            //e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
 
             player.draw(e.Graphics, 0);
             ball.draw(e.Graphics, 0);
@@ -309,8 +308,9 @@ namespace funkyBubbles
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             player.x = e.X;
-            player.y = e.Y;
+            //player.y = e.Y;
             player.UpdateRec();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

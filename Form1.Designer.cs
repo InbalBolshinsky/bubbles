@@ -44,11 +44,11 @@ namespace funkyBubbles
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Desktop;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(1200, 692);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -58,24 +58,26 @@ namespace funkyBubbles
             // 
             // ScoreBox
             // 
-            this.ScoreBox.BackColor = System.Drawing.SystemColors.Control;
+            this.ScoreBox.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ScoreBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ScoreBox.Location = new System.Drawing.Point(11, 11);
-            this.ScoreBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ScoreBox.Font = new System.Drawing.Font("ROG Fonts", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreBox.ForeColor = System.Drawing.Color.White;
+            this.ScoreBox.Location = new System.Drawing.Point(16, 17);
             this.ScoreBox.Multiline = true;
             this.ScoreBox.Name = "ScoreBox";
             this.ScoreBox.ReadOnly = true;
-            this.ScoreBox.Size = new System.Drawing.Size(123, 105);
+            this.ScoreBox.Size = new System.Drawing.Size(184, 78);
             this.ScoreBox.TabIndex = 1;
             this.ScoreBox.TextChanged += new System.EventHandler(this.ScoreBox_TextChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.ScoreBox);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

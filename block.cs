@@ -11,6 +11,7 @@ namespace funkyBubbles
             this.sizeY = sizeY;
 
             this.collision = new RectangleF(x, y, sizeX, sizeY);
+            //image_block = Image.FromFile("pics\\block_2.png");
             image_block = Image.FromFile("pics\\block_2.png");
         }
 

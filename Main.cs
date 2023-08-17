@@ -16,9 +16,12 @@ namespace funkyBubbles
     
     public partial class Main : Form
     {
-        public Main()
+        int high_score;
+        public Main(int high_score = 0)
         {
             InitializeComponent();
+            this.high_score = high_score;
+            highScore.Text = "High Score: " + high_score;
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -34,7 +37,7 @@ namespace funkyBubbles
             Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void highScore_TextChanged(object sender, EventArgs e)
         {
            
         }

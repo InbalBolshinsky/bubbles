@@ -26,8 +26,11 @@ namespace funkyBubbles
         string name;
         string status;
         SqlCommand cmd;
+        SqlCommand cmdMax;
         SqlConnection con;
         SqlDataAdapter da;
+
+        bool isGameSaved;
 
         public EndGame(int score, bool win)
         {
@@ -49,36 +52,6 @@ namespace funkyBubbles
             //print score:
             scoreTextBox.Text = this.score;
 
-            //print id:
-            idTextBox.Text = id.ToString();
-
-        }
-
-
-        private void scoringBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            
-            if (isFirstLoad)
-            {
-                isFirstLoad = false;
-                scoringBindingNavigatorSaveItem.Enabled = false;
-
-                //insert to SQL
-                con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\inbal\\Desktop\\bubbles\\bubbles\\ScoreBase.mdf;Integrated Security=True");
-                con.Open();
-
-                
-                cmd = new SqlCommand("INSERT INTO scoring (name, score, status) VALUES (@name, @score, @status)", con);
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@name", nameTextBox.Text);
-                cmd.Parameters.AddWithValue("@score", this.score);
-                cmd.Parameters.AddWithValue("@status", this.status);
-                cmd.ExecuteNonQuery();
-
-                this.tableAdapterManager.UpdateAll(this.modelDataSet);
-            
-            }
-            
         }
 
 
@@ -90,19 +63,6 @@ namespace funkyBubbles
 
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            if (isFirstLoad)
-            {
-                isFirstLoad = false;
-                bindingNavigatorAddNewItem.Enabled = false;
-            }
-        }
-
-        private void idTextBox_TextChanged(object sender, EventArgs e)
-        {
-            idTextBox.Text = id.ToString();
-        }
 
         private void idNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -142,6 +102,55 @@ namespace funkyBubbles
         private void scoringDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+
+
+        private void playAgain_Click(object sender, EventArgs e)
+        {
+;           //generate high score
+
+            cmdMax = new SqlCommand("SELECT MAX(CAST(score AS INT)) FROM scoring", con);
+            int highScore = Convert.ToInt32(cmdMax.ExecuteScalar());
+
+            this.tableAdapterManager.UpdateAll(this.modelDataSet);
+
+            //open new game
+            con.Close();
+            Main menu = new Main(highScore);
+            Hide();
+            menu.ShowDialog();
+            Close();
+
+        }
+
+        private void Quit_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Close();
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            if (isFirstLoad)
+            {
+                isFirstLoad = false;
+                save.Enabled = false;
+
+                //insert to SQL
+                con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\inbal\\Desktop\\bubbles\\bubbles\\ScoreBase.mdf;Integrated Security=True");
+                con.Open();
+
+
+                cmd = new SqlCommand("INSERT INTO scoring (name, score, status) VALUES (@name, @score, @status)", con);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@name", nameTextBox.Text);
+                cmd.Parameters.AddWithValue("@score", this.score);
+                cmd.Parameters.AddWithValue("@status", this.status);
+                cmd.ExecuteNonQuery();
+
+                this.tableAdapterManager.UpdateAll(this.modelDataSet);
+            }
         }
     }
 }

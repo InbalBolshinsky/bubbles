@@ -26,3 +26,6 @@ C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\S
 C:\Users\shash\OneDrive\שולחן העבודה\boobels\funkyBubbles\bin\Debug\ScoreBase_log.ldf
 C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\ScoreBase.mdf
 C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\ScoreBase_log.ldf
+C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\Main.resx
+C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\Main.cs
+C:\Users\inbal\Desktop\bubbles\bubbles\bin\Debug\Main.Designer.cs

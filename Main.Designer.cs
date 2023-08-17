@@ -34,6 +34,7 @@ namespace funkyBubbles
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.highScore = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@ namespace funkyBubbles
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -3);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 14);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1197, 700);
@@ -60,20 +61,28 @@ namespace funkyBubbles
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(452, 398);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Location = new System.Drawing.Point(8, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(236, 26);
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "high score:";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // highScore
+            // 
+            this.highScore.BackColor = System.Drawing.Color.Gold;
+            this.highScore.Location = new System.Drawing.Point(452, 413);
+            this.highScore.Multiline = true;
+            this.highScore.Name = "highScore";
+            this.highScore.ReadOnly = true;
+            this.highScore.Size = new System.Drawing.Size(291, 66);
+            this.highScore.TabIndex = 3;
+            this.highScore.TextChanged += new System.EventHandler(this.highScore_TextChanged);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.highScore);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -93,5 +102,6 @@ namespace funkyBubbles
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox highScore;
     }
 }

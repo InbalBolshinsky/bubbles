@@ -39,10 +39,9 @@ namespace funkyBubbles
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(452, 274);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(301, 178);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(288, 75);
+            this.button1.Size = new System.Drawing.Size(192, 49);
             this.button1.TabIndex = 0;
             this.button1.Text = "play";
             this.button1.UseVisualStyleBackColor = true;
@@ -51,33 +50,32 @@ namespace funkyBubbles
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(5, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1197, 700);
+            this.pictureBox1.Size = new System.Drawing.Size(798, 455);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // highScore
             // 
             this.highScore.BackColor = System.Drawing.Color.Gold;
-            this.highScore.Location = new System.Drawing.Point(452, 413);
+            this.highScore.Location = new System.Drawing.Point(301, 268);
+            this.highScore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.highScore.Multiline = true;
             this.highScore.Name = "highScore";
             this.highScore.ReadOnly = true;
-            this.highScore.Size = new System.Drawing.Size(291, 66);
+            this.highScore.Size = new System.Drawing.Size(195, 44);
             this.highScore.TabIndex = 3;
             this.highScore.TextChanged += new System.EventHandler(this.highScore_TextChanged);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.highScore);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);

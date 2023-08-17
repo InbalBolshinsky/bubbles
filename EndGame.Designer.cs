@@ -43,6 +43,7 @@ namespace funkyBubbles
             this.playAgain = new System.Windows.Forms.Button();
             this.Quit = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
+            this.request = new System.Windows.Forms.TextBox();
             nameLabel = new System.Windows.Forms.Label();
             scoreLabel = new System.Windows.Forms.Label();
             statusLabel = new System.Windows.Forms.Label();
@@ -163,11 +164,21 @@ namespace funkyBubbles
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
+            // request
+            // 
+            this.request.Location = new System.Drawing.Point(144, 25);
+            this.request.Name = "request";
+            this.request.ReadOnly = true;
+            this.request.Size = new System.Drawing.Size(201, 26);
+            this.request.TabIndex = 15;
+            this.request.Text = "Please save your data first";
+            // 
             // EndGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 692);
+            this.Controls.Add(this.request);
             this.Controls.Add(this.save);
             this.Controls.Add(this.Quit);
             this.Controls.Add(this.playAgain);
@@ -200,5 +211,6 @@ namespace funkyBubbles
         private System.Windows.Forms.Button playAgain;
         private System.Windows.Forms.Button Quit;
         private System.Windows.Forms.Button save;
+        private System.Windows.Forms.TextBox request;
     }
 }

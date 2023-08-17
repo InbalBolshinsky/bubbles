@@ -21,8 +21,10 @@ namespace funkyBubbles
     {
         static public int id = 1;
         private bool isFirstLoad = true;
+        private bool isSAVED = false;
         bool winner;
         string score;
+        int highScore;
         string name;
         string status;
         SqlCommand cmd;
@@ -51,6 +53,7 @@ namespace funkyBubbles
             this.score = score.ToString();
             //print score:
             scoreTextBox.Text = this.score;
+            
 
         }
 
@@ -104,23 +107,30 @@ namespace funkyBubbles
 
         }
 
-
-
-        private void playAgain_Click(object sender, EventArgs e)
+        private int GenerateHighScore()
         {
-;           //generate high score
+            //generate high score
 
             cmdMax = new SqlCommand("SELECT MAX(CAST(score AS INT)) FROM scoring", con);
-            int highScore = Convert.ToInt32(cmdMax.ExecuteScalar());
+            highScore = Convert.ToInt32(cmdMax.ExecuteScalar());
 
             this.tableAdapterManager.UpdateAll(this.modelDataSet);
 
-            //open new game
             con.Close();
-            Main menu = new Main(highScore);
-            Hide();
-            menu.ShowDialog();
-            Close();
+            return highScore;
+        }
+
+        private void playAgain_Click(object sender, EventArgs e)
+        {
+            if (!isFirstLoad)
+            {
+                //open new game
+
+                Main menu = new Main(GenerateHighScore());
+                Hide();
+                menu.ShowDialog();
+                Close();
+            }
 
         }
 
@@ -132,7 +142,7 @@ namespace funkyBubbles
 
         private void save_Click(object sender, EventArgs e)
         {
-            if (isFirstLoad)
+            if (isFirstLoad)//FirstLoad - already saved 
             {
                 isFirstLoad = false;
                 save.Enabled = false;

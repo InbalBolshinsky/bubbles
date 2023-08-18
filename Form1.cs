@@ -101,19 +101,6 @@ namespace funkyBubbles
                         blocks[r_X2, c_X2] = new X2Block(Width / 6 + diffx * c_X2, Height / 10 + diffy * r_X2, Width / 12, Height / 12);
                     }
 
-
-
-                    /*
-                    if (i == 0 && j == 0)
-                    {
-                        //blocks[0, 0] = new Lifeblock(Width / 6 + diffx * j, Height / 10 + diffy * i, Width / 12, Height / 12);       
-                    }
-                    else if (i == 3 && j == 7)
-                    {
-                        //blocks[3, 7] = new X2Block(Width / 6 + diffx * j, Height / 10 + diffy * i, Width / 12, Height / 12);
-                    }
-                    */
-
                     else
                     {
 

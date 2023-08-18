@@ -21,7 +21,6 @@ namespace funkyBubbles
     {
         static public int id = 1;
         private bool isFirstLoad = true;
-        private bool isSAVED = false;
         bool winner;
         string score;
         int highScore;
@@ -30,9 +29,6 @@ namespace funkyBubbles
         SqlCommand cmd;
         SqlCommand cmdMax;
         SqlConnection con;
-        SqlDataAdapter da;
-
-        bool isGameSaved;
 
         public EndGame(int score, bool win)
         {
@@ -61,8 +57,6 @@ namespace funkyBubbles
 
         private void EndGame_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'modelDataSet.scoring' table. You can move, or remove it, as needed.
-            //this.scoringTableAdapter.Fill(this.modelDataSet.scoring);
 
         }
 
@@ -148,7 +142,13 @@ namespace funkyBubbles
                 save.Enabled = false;
 
                 //insert to SQL
-                con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\USERS\\SHASH\\ONEDRIVE\\שולחן העבודה\\BOOBELS\\FUNKYBUBBLES\\SCOREBASE.MDF;Integrated Security=True");
+
+                //for Shani:            
+                //con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\USERS\\SHASH\\ONEDRIVE\\שולחן העבודה\\BOOBELS\\FUNKYBUBBLES\\SCOREBASE.MDF;Integrated Security=True");
+               
+                //for Inbal:
+                con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\inbal\\Desktop\\bubbles\\bubbles\\ScoreBase.mdf;Integrated Security=True");
+
                 con.Open();
 
 

@@ -33,6 +33,8 @@ namespace funkyBubbles
         public EndGame(int score, bool win)
         {
             InitializeComponent();
+
+            //print status
             if (win == true)
             {
                 winner = true;
@@ -46,8 +48,8 @@ namespace funkyBubbles
                 this.status = "Loser";
             }
 
-            this.score = score.ToString();
             //print score:
+            this.score = score.ToString();
             scoreTextBox.Text = this.score;
             
 
@@ -74,11 +76,6 @@ namespace funkyBubbles
 
         private void statusTextBox_TextChanged(object sender, EventArgs e)
         {
-            //print status:
-            if (winner == true)
-                statusTextBox.Text = "Winner";
-            else
-                statusTextBox.Text = "Loser";
 
 
 

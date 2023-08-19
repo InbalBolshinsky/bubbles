@@ -115,12 +115,15 @@ namespace funkyBubbles
             // 
             // statusTextBox
             // 
+            this.statusTextBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.scoringBindingSource, "status", true));
+            this.statusTextBox.Font = new System.Drawing.Font("ROG Fonts", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusTextBox.Location = new System.Drawing.Point(144, 171);
             this.statusTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.statusTextBox.Multiline = true;
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.ReadOnly = true;
-            this.statusTextBox.Size = new System.Drawing.Size(178, 26);
+            this.statusTextBox.Size = new System.Drawing.Size(214, 56);
             this.statusTextBox.TabIndex = 8;
             this.statusTextBox.TextChanged += new System.EventHandler(this.statusTextBox_TextChanged);
             // 

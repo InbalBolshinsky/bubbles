@@ -29,7 +29,7 @@ namespace funkyBubbles
         int ball_start_Y;
         Image ball_image;
 
-        int lives = 4;
+        int lives = 3;
         int score = 0;
         int point = 10;
         int gone = 0; //how may block are gone
@@ -58,7 +58,7 @@ namespace funkyBubbles
 
             game_started = false;
             Random r = new Random();
-            Random r_block = new Random();//generates coordinates of Lifeblock
+            Random r_block = new Random();//generates coordinates of special blocks
         
             Vel = 4; 
             VelY = 4; 
@@ -190,16 +190,16 @@ namespace funkyBubbles
                         if (boobs.IntersectsWith(block))
                         {
 
-                            if (boobs.Right > block.Left)
+                            if (boobs.Right > block.Left)//ball hits from left
                                 dirX = false;
 
-                            if (boobs.Left < block.Right)
+                            if (boobs.Left < block.Right)//ball hits from right
                                 dirX = true;
 
-                            if (boobs.Top < block.Bottom)
+                            if (boobs.Top < block.Bottom)//ball hits from below
                                 dirY = false;
 
-                            if (boobs.Bottom > block.Top)
+                            if (boobs.Bottom > block.Top)//ball hits from above
                                 dirY = true;
 
                             if (blocks[i, j] is Lifeblock )
@@ -326,5 +326,9 @@ namespace funkyBubbles
             
         }
 
+        private void start_request_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

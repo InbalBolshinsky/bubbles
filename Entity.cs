@@ -18,8 +18,6 @@ namespace funkyBubbles
 
         public Brush b = new SolidBrush(Color.Blue);
 
-        int flag;
-
         public Entity(int x, int y, int sizeX,int sizeY)
         {
             this.x = x;
@@ -32,28 +30,6 @@ namespace funkyBubbles
 
         }
 
-      ////  public void move(float speed)
-      //// {
-      ////      switch (Dir)
-      ////      {
-      ////          case 1:
-      ////             x -= speed;
-      ////              break;
-      ////          case 2:
-      ////             y -= speed;
-      ////              break;
-      ////         case 3:
-      ////              x += speed;
-      ////             break;
-      ////         case 4:
-      ////            y += speed;
-      ////              break;
-      ////      }
-
-      ////      if (Dir != 0)
-      ////         lastDir = Dir;
-      ////}
-
 
 
         public void UpdateRec()
@@ -63,6 +39,7 @@ namespace funkyBubbles
 
             collision.Width = sizeX;
             collision.Height = sizeY;
+
 
         }
 

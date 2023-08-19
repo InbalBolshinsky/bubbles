@@ -35,8 +35,8 @@ namespace funkyBubbles
         public void upgrade()
         {
          
-            sizeX = 7;
-            sizeY = 7;
+            sizeX = 15;
+            sizeY = 15;
             UpdateRec();
         }
 

@@ -33,6 +33,7 @@ namespace funkyBubbles
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ScoreBox = new System.Windows.Forms.TextBox();
+            this.start_request = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,11 +71,26 @@ namespace funkyBubbles
             this.ScoreBox.TabIndex = 1;
             this.ScoreBox.TextChanged += new System.EventHandler(this.ScoreBox_TextChanged);
             // 
+            // start_request
+            // 
+            this.start_request.BackColor = System.Drawing.SystemColors.MenuText;
+            this.start_request.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.start_request.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.start_request.ForeColor = System.Drawing.SystemColors.Window;
+            this.start_request.Location = new System.Drawing.Point(518, 0);
+            this.start_request.Name = "start_request";
+            this.start_request.ReadOnly = true;
+            this.start_request.Size = new System.Drawing.Size(156, 21);
+            this.start_request.TabIndex = 3;
+            this.start_request.Text = "Please click to start";
+            this.start_request.TextChanged += new System.EventHandler(this.start_request_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.start_request);
             this.Controls.Add(this.ScoreBox);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -92,6 +108,7 @@ namespace funkyBubbles
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox ScoreBox;
+        private System.Windows.Forms.TextBox start_request;
     }
 }
 

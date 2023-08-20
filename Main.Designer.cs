@@ -34,12 +34,13 @@ namespace funkyBubbles
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.highScore = new System.Windows.Forms.TextBox();
+            this.Headline = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button1.Font = new System.Drawing.Font("ROG Fonts", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(452, 274);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -70,13 +71,27 @@ namespace funkyBubbles
             this.highScore.ReadOnly = true;
             this.highScore.Size = new System.Drawing.Size(290, 66);
             this.highScore.TabIndex = 3;
+            this.highScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.highScore.TextChanged += new System.EventHandler(this.highScore_TextChanged);
+            // 
+            // Headline
+            // 
+            this.Headline.AutoSize = true;
+            this.Headline.BackColor = System.Drawing.Color.DimGray;
+            this.Headline.Font = new System.Drawing.Font("Microsoft YaHei", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Headline.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Headline.Location = new System.Drawing.Point(324, 119);
+            this.Headline.Name = "Headline";
+            this.Headline.Size = new System.Drawing.Size(570, 96);
+            this.Headline.TabIndex = 4;
+            this.Headline.Text = "Funky Bubbles";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.Headline);
             this.Controls.Add(this.highScore);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -96,5 +111,6 @@ namespace funkyBubbles
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox highScore;
+        private System.Windows.Forms.Label Headline;
     }
 }

@@ -75,10 +75,8 @@ namespace funkyBubbles
             high_score = Convert.ToInt32(cmdMax.ExecuteScalar());
             con.Close();
             return high_score;
-            
-       
-
         }
+
         private void highScore_TextChanged(object sender, EventArgs e)
         {
 

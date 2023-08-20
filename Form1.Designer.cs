@@ -59,10 +59,10 @@ namespace funkyBubbles
             // 
             // ScoreBox
             // 
-            this.ScoreBox.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.ScoreBox.BackColor = System.Drawing.Color.SeaGreen;
             this.ScoreBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ScoreBox.Font = new System.Drawing.Font("ROG Fonts", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreBox.ForeColor = System.Drawing.Color.White;
+            this.ScoreBox.ForeColor = System.Drawing.SystemColors.Window;
             this.ScoreBox.Location = new System.Drawing.Point(16, 17);
             this.ScoreBox.Multiline = true;
             this.ScoreBox.Name = "ScoreBox";

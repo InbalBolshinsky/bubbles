@@ -54,30 +54,33 @@ namespace funkyBubbles
             // nameLabel
             // 
             nameLabel.AutoSize = true;
+            nameLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nameLabel.Location = new System.Drawing.Point(78, 95);
             nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(53, 20);
+            nameLabel.Size = new System.Drawing.Size(62, 24);
             nameLabel.TabIndex = 3;
             nameLabel.Text = "name:";
             // 
             // scoreLabel
             // 
             scoreLabel.AutoSize = true;
+            scoreLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             scoreLabel.Location = new System.Drawing.Point(78, 135);
             scoreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             scoreLabel.Name = "scoreLabel";
-            scoreLabel.Size = new System.Drawing.Size(52, 20);
+            scoreLabel.Size = new System.Drawing.Size(59, 24);
             scoreLabel.TabIndex = 5;
             scoreLabel.Text = "score:";
             // 
             // statusLabel
             // 
             statusLabel.AutoSize = true;
+            statusLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             statusLabel.Location = new System.Drawing.Point(78, 175);
             statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(57, 20);
+            statusLabel.Size = new System.Drawing.Size(65, 24);
             statusLabel.TabIndex = 7;
             statusLabel.Text = "status:";
             // 
@@ -93,6 +96,7 @@ namespace funkyBubbles
             // 
             // nameTextBox
             // 
+            this.nameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.scoringBindingSource, "name", true));
             this.nameTextBox.Location = new System.Drawing.Point(144, 91);
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -103,7 +107,7 @@ namespace funkyBubbles
             // 
             // scoreTextBox
             // 
-            this.scoreTextBox.BackColor = System.Drawing.Color.White;
+            this.scoreTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.scoreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.scoringBindingSource, "score", true));
             this.scoreTextBox.Location = new System.Drawing.Point(144, 131);
             this.scoreTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -139,42 +143,50 @@ namespace funkyBubbles
             // 
             // playAgain
             // 
+            this.playAgain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.playAgain.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playAgain.Location = new System.Drawing.Point(447, 82);
             this.playAgain.Name = "playAgain";
             this.playAgain.Size = new System.Drawing.Size(97, 46);
             this.playAgain.TabIndex = 12;
             this.playAgain.Text = "play again";
-            this.playAgain.UseVisualStyleBackColor = true;
+            this.playAgain.UseVisualStyleBackColor = false;
             this.playAgain.Click += new System.EventHandler(this.playAgain_Click);
             // 
             // Quit
             // 
+            this.Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Quit.Location = new System.Drawing.Point(447, 157);
             this.Quit.Name = "Quit";
             this.Quit.Size = new System.Drawing.Size(101, 38);
             this.Quit.TabIndex = 13;
             this.Quit.Text = "Quit";
-            this.Quit.UseVisualStyleBackColor = true;
+            this.Quit.UseVisualStyleBackColor = false;
             this.Quit.Click += new System.EventHandler(this.Quit_Click);
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(282, 280);
+            this.save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.save.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save.Location = new System.Drawing.Point(259, 281);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(116, 60);
+            this.save.Size = new System.Drawing.Size(149, 60);
             this.save.TabIndex = 14;
             this.save.Text = "Save Results";
-            this.save.UseVisualStyleBackColor = true;
+            this.save.UseVisualStyleBackColor = false;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // request
             // 
+            this.request.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.request.Location = new System.Drawing.Point(144, 25);
             this.request.Name = "request";
             this.request.ReadOnly = true;
-            this.request.Size = new System.Drawing.Size(201, 26);
+            this.request.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.request.Size = new System.Drawing.Size(233, 30);
             this.request.TabIndex = 15;
-            this.request.Text = "Please save your data first";
+            this.request.Text = "Please save your data first!";
             // 
             // EndGame
             // 

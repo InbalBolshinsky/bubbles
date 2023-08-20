@@ -19,11 +19,11 @@ namespace funkyBubbles
     
     public partial class Main : Form
     {
-        int high_score;
-        SqlCommand cmdMax;
-        SqlCommand cmdDelete;//command for deleting table data (line 31)
-        SqlConnection con;
-        bool refresh = true;
+        int high_score; //high score
+        SqlCommand cmdMax; //sql command to get high score
+        SqlCommand cmdDelete; //sql command for deleting table data (line 31)
+        SqlConnection con; //sql connection to data base
+        
         public Main(int high_score = 0)
         {
             InitializeComponent();
@@ -37,12 +37,13 @@ namespace funkyBubbles
             con.Close();
             */
 
+            //get high score:
             if (high_score == 0)
-                this.high_score = gethighscore(refresh);
+                this.high_score = gethighscore(); //for second or more time playing
             else
-                this.high_score = high_score;
-           
-            highScore.Text = "High Score: " + this.high_score;
+                this.high_score = high_score; //for first time playing
+
+            highScore.Text = "High Score: " + this.high_score; //display high score
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -52,13 +53,14 @@ namespace funkyBubbles
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //open new game
             Form1 game = new Form1();
             Hide();
             game.ShowDialog();
             Close();
         }
 
-        private int gethighscore(bool refresh)
+        private int gethighscore()
         {
 
             //for Shani:            
@@ -67,6 +69,7 @@ namespace funkyBubbles
             //for Inbal:
             con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\inbal\\Desktop\\bubbles\\bubbles\\ScoreBase.mdf;Integrated Security=True");
             
+            //generating high score from sql data base
             con.Open();
             cmdMax = new SqlCommand("SELECT MAX(CAST(score AS INT)) FROM scoring", con);
             high_score = Convert.ToInt32(cmdMax.ExecuteScalar());

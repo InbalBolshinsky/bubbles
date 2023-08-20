@@ -11,9 +11,6 @@ namespace funkyBubbles
             outline= new Pen(Color.Black,sizeX/10);
             this.sizeX = sizeX;
             this.sizeY = sizeY;
-
-            //image_block = Image.FromFile("pics\\block_2.png");
-            image_block = Image.FromFile("pics\\block_2.png");
         }
 
         //kinds of block:
@@ -22,9 +19,6 @@ namespace funkyBubbles
 
         public override void draw(Graphics g, int flag)
         {
-
-            //g.DrawImage(image_block, x, y, sizeX, sizeY);
-
            g.FillRectangle(b, collision);
            g.DrawRectangle(outline, collision);
         }

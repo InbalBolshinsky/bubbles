@@ -23,15 +23,14 @@ namespace funkyBubbles
         bool game_started;
 
         List<Block> special_balls;// רשימה מקושרת של בלוקים מיוחדים שהופכים לכדורים ויורדים למטה
-        int offset = 20;
-        int outball = 0;
         Ball ball;
         int ball_start_Y;
         Image ball_image;
 
-        int lives = 3;
-        int score = 0;
-        int point = 10;
+        int lives = 3;//initializing players lives
+        int score = 0;//initializing players score
+        int point = 10;//points the player gets for hitting block
+
         int gone = 0; //how may block are gone
         bool win = false;//are ya winning son?
 
@@ -42,9 +41,6 @@ namespace funkyBubbles
         int VelY;
 
         Block[,] blocks;
-        Rectangle spaceship;
-        Rectangle block;
-        Graphics g;
         Spaceship player;
 
         public Form1()
@@ -109,11 +105,6 @@ namespace funkyBubbles
                 }
             }
         }
-        
-        //private void Form1_MouseClick(object sender, MouseEventArgs e)//למחוק בסוף
-        //{ 
-        //    dirX = !dirX;
-        //}
         
         private void StopTimer()
         {
@@ -310,14 +301,12 @@ namespace funkyBubbles
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             player.x = e.X;
-            //player.y = e.Y;
             player.UpdateRec();
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //dirX = !dirX;
             game_started = true;
         }
 

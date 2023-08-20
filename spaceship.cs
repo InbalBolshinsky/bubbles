@@ -7,57 +7,21 @@ using System.Drawing;
 
 namespace funkyBubbles
 {
-    class Spaceship : Entity
+    class Spaceship : Entity //spaceship class inherits from entity
     {
         Image sship;
-       // Image misspac_rot;
-
-        //Image misspac_c;
-        //Image misspac_rot_c;
-
-        Image[] deathFrames;
-
-        public bool isClosed;
-        int animInt;
-
         public Spaceship(int x, int y, int sizeX, int sizeY) : base(x, y, sizeX, sizeY)
-        {
+        { 
          
-            b = new SolidBrush(Color.Yellow);
+            b = new SolidBrush(Color.Yellow);//darwing ship
 
-            sship = Image.FromFile("pics\\sship.png");
+            sship = Image.FromFile("pics\\sship.png");//getting the image file for ship
         }
 
         public override void draw(Graphics g, int flag)
         {
-            g.DrawImage(sship, x, y, sizeX, sizeY);
+            g.DrawImage(sship, x, y, sizeX, sizeY);//drawing the ship
         }
-
-
-        ////public void deathAnim(int frame, Graphics g)
-        ////{
-           
-        ////}
-
-
-        ////public void Animate()
-        ////{
-        ////    if (Dir != 0)
-        ////    {
-        ////        animInt++;
-
-        ////        if (animInt == 5)
-        ////        {
-        ////            isClosed = !(isClosed);
-        ////            animInt = 0;
-        ////        }
-        ////    }
-
-        ////}
-
-        
-
-
 
     }
 }

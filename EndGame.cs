@@ -19,16 +19,17 @@ namespace funkyBubbles
 {
     public partial class EndGame : Form
     {
-        static public int id = 1;
-        private bool isFirstLoad = true;
-        bool winner;
-        string score;
-        int highScore;
-        string name;
-        string status;
-        SqlCommand cmd;
-        SqlCommand cmdMax;
-        SqlConnection con;
+        static public int id = 1; //initializing players id
+        private bool isFirstLoad = true; //did the player save their data
+        bool winner; //did the player win
+        string score; //players score
+        int highScore; //high score
+        string name; //players name
+        string status; //players status
+
+        SqlCommand cmd; //sql command for inserting score
+        SqlCommand cmdMax; //sql command for getting high score
+        SqlConnection con; //sql connection to data base
 
         public EndGame(int score, bool win)
         {
@@ -65,6 +66,7 @@ namespace funkyBubbles
 
         private void idNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
+            //incresing unique players id by 1;
             id++;
         }
         private void scoreTextBox_TextChanged(object sender, EventArgs e)
@@ -90,6 +92,7 @@ namespace funkyBubbles
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
         {
+            //get players name from name text box
             name = nameTextBox.Text;
         }
 
@@ -127,6 +130,7 @@ namespace funkyBubbles
 
         private void Quit_Click(object sender, EventArgs e)
         {
+            //quiting game and closing all forms
             Hide();
             Close();
         }
@@ -135,6 +139,7 @@ namespace funkyBubbles
         {
             if (isFirstLoad)//FirstLoad - already saved 
             {
+                //disable save results button
                 isFirstLoad = false;
                 save.Enabled = false;
 
@@ -148,7 +153,7 @@ namespace funkyBubbles
 
                 con.Open();
 
-
+                //inserting players data: name, score, status
                 cmd = new SqlCommand("INSERT INTO scoring (name, score, status) VALUES (@name, @score, @status)", con);
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@name", nameTextBox.Text);

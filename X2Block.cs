@@ -7,34 +7,24 @@ using System.Drawing;
 
 namespace funkyBubbles
 {
-    class X2Block : Block
+    class X2Block : Block //X2Block inherits from Block
     {
         Image image_block;
 
 
         public X2Block(int x, int y , int sizeX, int sizeY) : base(x, y, sizeX, sizeY)
         {
+            // setting the size for X2Block
             this.sizeX = sizeX;
             this.sizeY = sizeY;
 
-            image_block = Image.FromFile("pics\\block_2.png");
+            image_block = Image.FromFile("pics\\block_2.png");// getting image file to draw block
 
         }
 
-
-        //public override void draw(Graphics g, int flag)
-        //{
-
-        //    g.DrawImage(image_block, x, y, sizeX, sizeY);
-
-        //    //g.FillRectangle(b, collision);
-        //}
-
-
-
         public void upgrade()
         {
-         
+            //updating special block size when the ball hits it
             sizeX = 15;
             sizeY = 15;
             UpdateRec();

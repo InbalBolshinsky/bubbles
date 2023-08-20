@@ -11,19 +11,20 @@ namespace funkyBubbles
 {
     class Ball : Entity 
     {
-        Image ball;
+       // Image ball;
         public Ball(int x, int y, int sizeX) : base(x, y, sizeX, sizeX)
         {
+            //filling ball ellipse with red
             b = new SolidBrush(Color.Red);
 
-            ball = Image.FromFile("pics\\ball.png");
+          //  ball = Image.FromFile("pics\\ball.png");
         }
 
 
 
         public override void draw(Graphics g, int flag)
         {
-            //g.DrawImage(ball, x, y, sizeX, sizeY);
+            //drawing ball
             g.FillEllipse(b,x,y,sizeX,sizeY);
         }
 

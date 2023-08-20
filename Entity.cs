@@ -9,24 +9,26 @@ namespace funkyBubbles
 {
     public abstract class Entity
     {
-        public int x, y;
+        public int x, y;//place of entity
 
-        public int Dir = 0;
-        public int lastDir = 1;
-        public int sizeX,sizeY;
-        public Rectangle collision;
+        public int Dir = 0;//direction of entity
+        public int lastDir = 1;//direction change for entity
+        public int sizeX,sizeY;//size of entity
+        public Rectangle collision; //collision of entity
 
         public Brush b = new SolidBrush(Color.Blue);
 
         public Entity(int x, int y, int sizeX,int sizeY)
         {
+            //setting entitys place
             this.x = x;
             this.y = y;
 
+            //setting entitys size
             this.sizeX = sizeX;
             this.sizeY = sizeY; 
 
-            this.collision = new Rectangle(x, y, sizeX, sizeY);
+            this.collision = new Rectangle(x, y, sizeX, sizeY); //setting collision for entity
 
         }
 
@@ -34,6 +36,7 @@ namespace funkyBubbles
 
         public void UpdateRec()
         {
+            //setting and updating entitys size
             collision.X = x;
             collision.Y = y;
 
@@ -43,21 +46,8 @@ namespace funkyBubbles
 
         }
 
+        //drawing entity
         public abstract void draw(Graphics g, int flag);
 
-
-
-        ////draws the collisions
-        ////public void DRAWCOL(Graphics g)
-        ////{
-        ////    g.FillRectangle(b, collision);
-        ////}
-
-        //////sets the size of the drawing and collision
-        ////public void setSize(float nR)
-        ////{
-        ////    radius = nR;
-        ////    collision.Width = collision.Height = radius * 2;
-        ////}
     }
 }

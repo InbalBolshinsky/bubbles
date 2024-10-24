@@ -1,4 +1,4 @@
-## BUBBLES
+## FunkyBubbles
 ## Objective:
 
 The Bubbles game project is an arcade game. The goal of the Bubbles project is to apply Object-Oriented Programming (OOP) principles to create an interactive and engaging arcade game. By implementing key OOP concepts such as encapsulation, inheritance, and polymorphism, the project aims to provide a functional and enjoyable user experience, while demonstrating the ability to design, develop, and manage game components efficiently using C#. 

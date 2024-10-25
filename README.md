@@ -14,9 +14,8 @@ The FunkyBubbles game project is an arcade game. The goal of the FunkyBubbles pr
 
 ## Tools Used:
 
-- C#: The programming language used for game development.
-- Visual Studio: The IDE used to write and debug the C# code.
+- .NET frameworks.
 - SQL: Used for storing and managing game data such as user scores or game settings.
-- Object-Oriented Programming (OOP) Concepts: Implementing game logic and structure.
+- Object-Oriented Programming (OOP) Concepts.
 - Git: Version control for managing project changes.
 
